@@ -1,5 +1,10 @@
-CS:GO Crosshair overlay for awesomewm
+CS:GO-like crosshair overlay for awesomewm
 ==================
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/1234183/172886550-6a730c44-99d8-44ee-9aa7-f0e24d2eeff5.png">
+</p>
+
 
 Customization:
 ------------
