@@ -9,16 +9,18 @@ CS:GO-like crosshair overlay for awesomewm
 Customization:
 ------------
 
-| name | default
-|---|---
-| `screen` | screen.primary 
-| `visible` | false
-| `color` | "#00FF00FF" 
-| `size` | 12
-| `thickness` | 6
-| `gap` | 4
-| `outline` | 0
-| `dot` | 0
+| name | default | description
+|---|---|---
+| `screen` | screen.primary | the monitor
+| `visible` | false | visibility on startup
+| `color` | "#00FF00FF"  | crosshair color
+| `size` | 12 | crosshair size
+| `thickness` | 6 | crosshair thickness
+| `gap` | 4 | crosshair gap
+| `outline` | 0 | crosshair outline (border)
+| `dot` | 0 | crosshair dot radius
+| `apps` | nil | automatically enable crosshair for applications (e.g. apps = {"Apex Legends", "Counter-Strike.*"})
+
 
 Installation:
 ------------

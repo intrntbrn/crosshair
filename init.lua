@@ -7,6 +7,14 @@ local function toggle()
 	module.popup.visible = not module.popup.visible
 end
 
+local function enable()
+	module.popup.visible = true
+end
+
+local function disable()
+	module.popup.visible = false
+end
+
 local function new(args)
 	args = args or {}
 
@@ -19,6 +27,7 @@ local function new(args)
 	local gap = args.gap or 4
 	local dot = args.dot or 0
 	local visible = args.visible
+	local apps = args.apps
 
 	-- limits
 	gap = math.max(0, gap)
@@ -116,7 +125,21 @@ local function new(args)
 		visible = visible,
 	})
 
+	awesome.connect_signal("crosshair::enable", enable)
+	awesome.connect_signal("crosshair::disable", disable)
 	awesome.connect_signal("crosshair::toggle", toggle)
+
+	if apps then
+		client.connect_signal("focus", function(c)
+			for _, v in ipairs(apps) do
+				if string.find(c.name, v) then
+					enable()
+					return
+				end
+			end
+			disable()
+		end)
+	end
 end
 
 return setmetatable(module, {
